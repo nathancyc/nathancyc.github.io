@@ -1,12 +1,56 @@
-<!DOCTYPE html> 
-<html>
-  <head>
-    <title> Test - Homepage</title>
-  </head>
-  
-  <body>
-    <h1>Test</h1>  
-    
-    <p>Test</p> 
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Optional: basic styling for the navbar and iframe container */
+    nav {
+      background-color: #f8f8f8;
+      padding: 1em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+    }
+    nav ul li {
+      display: inline;
+    }
+    #iframe-container {
+      width: 100%;
+      height: calc(100vh - 60px); /* Adjust height based on navbar height */
+      border: none;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <!-- The button to load your project -->
+      <li><button id="projectBtn">Project Root</button></li>
+    </ul>
+  </nav>
+
+  <!-- Main content area where the project will be shown -->
+  <div id="content">
+    <!-- Other content can go here -->
+  </div>
+
+  <!-- JavaScript to handle the button click and load the iframe -->
+  <script>
+    document.getElementById('projectBtn').addEventListener('click', function() {
+      // Replace the URL below with the actual URL of your deployed project_root website.
+      const projectUrl = 'https://project-root-app.herokuapp.com';
+      
+      // Insert an iframe into the #content div
+      document.getElementById('content').innerHTML = 
+        '<iframe id="iframe-container" src="' + projectUrl + '" allowfullscreen></iframe>';
+    });
+  </script>
+</body>
 </html>
